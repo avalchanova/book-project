@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+
 }
 
 .App-logo {
@@ -11,6 +11,11 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@200;400&display=swap');
+
+body{
+  font-family: "Urbanist", sans-serif;
 }
 
 .App-header {
