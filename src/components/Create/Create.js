@@ -62,7 +62,7 @@ const Create = () => {
             <div className="col-12" >
                 <div className="form-check">
                     <input className="form-check-input" type="checkbox" id="gridCheck" />
-                    <label class="form-check-label" htmlFor="gridCheck" style={styles.radioButtonTxt}>Part of a series</label>
+                    <label className="form-check-label" htmlFor="gridCheck" style={styles.radioButtonTxt}>Part of a series</label>
                 </div>
             </div>
             <div className="col-12" style={styles.buttonContainer}>
