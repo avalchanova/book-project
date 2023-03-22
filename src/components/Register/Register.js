@@ -3,6 +3,8 @@ import React from 'react';
 const Register = () => {
     return (
         <form className="row g-3 needs-validation" style={styles.form} novalidate>
+            <h1 style={styles.heading}>REGISTER</h1>
+
             <div className="col-md-6">
                 <label htmlFor="validationCustom01" className="form-label">First name</label>
                 <input type="text" className="form-control" id="validationCustom01" placeholder="John" required />
@@ -66,6 +68,11 @@ const styles = {
         paddingTop: "5%",
         paddingLeft: "35%",
         paddingRight: "35%"
+    },
+    heading: {
+        paddingTop: "5%",
+        paddingBottom: "2%",
+        textAlign: "center"
     },
     button: {
         backgroundColor: "#ffe45e",

@@ -3,6 +3,7 @@ import React from 'react';
 const Login = () => {
     return (
         <form style={styles.form}>
+            <h1 style={styles.heading}>LOGIN</h1>
             <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
@@ -29,6 +30,11 @@ const styles = {
         paddingTop: "5%",
         paddingLeft: "40%",
         paddingRight: "40%"
+    },
+    heading: {
+        paddingTop: "5%",
+        paddingBottom: "2%",
+        textAlign: "center"
     },
     button: {
         backgroundColor: "#ffe45e",

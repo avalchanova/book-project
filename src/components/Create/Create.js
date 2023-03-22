@@ -3,6 +3,8 @@ import React from 'react';
 const Create = () => {
     return (
         <form className="row g-3" style={styles.form}>
+            <h1 style={styles.heading}>CREATE A POST</h1>
+
             <div className="col-md-6 p3">
                 <label htmlFor="inputTitlel4" className="form-label">Title</label>
                 <input type="text" className="form-control" id="inputTitle4" placeholder="Little Women" />
@@ -77,6 +79,11 @@ const styles = {
         paddingTop: "1.5%",
         paddingLeft: "35%",
         paddingRight: "35%"
+    },
+    heading: {
+        paddingTop: "5%",
+        paddingBottom: "2%",
+        textAlign: "center"
     },
     button: {
         backgroundColor: "#ffe45e",
