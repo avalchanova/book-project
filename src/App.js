@@ -7,6 +7,7 @@ import Login from './components/Login/Login.js';
 import Register from './components/Register/Register.js';
 import Footer from './components/Footer/Footer.js';
 import Catalogue from './components/Catalogue/Catalogue.js';
+import BookDetails from './components/BookDetails/BookDetails.js';
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                 <Route path='/create' element={<Create />} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
+                <Route path='/details' element={<BookDetails />} />
             </Routes>
 
             {/* <Footer /> */}
