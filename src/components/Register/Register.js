@@ -51,6 +51,9 @@ const Register = () => {
                     </div>
                 </div>
             </div>
+            <div className="signup-link">
+                Already a member? <a href="/login">Log in now</a>
+            </div>
             <div class="col-12" style={styles.buttonContainer}>
                 <button class="btn btn-primary" type="submit" style={styles.button}>Register</button>
             </div>
@@ -73,5 +76,9 @@ const styles = {
         display: 'flex',
     }
 };
+
+
+
+
 
 export default Register;
