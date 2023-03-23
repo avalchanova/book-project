@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // TODO: yellow borders on auth forms and create form 
 const Login = () => {
     return (
@@ -18,7 +19,7 @@ const Login = () => {
                 {/* <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label> */}
                 {/* </div> */}
                 <div className="signup-link">
-                    Not a member? <a href="/register">Register now</a>
+                    Not a member? <Link to="/register">Register now</Link>
                 </div>
                 <div style={styles.buttonContainer}>
                     <button type="submit" className="btn btn-primary" style={styles.button}>Login</button>

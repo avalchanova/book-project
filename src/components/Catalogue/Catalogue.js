@@ -1,10 +1,11 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+// TODO: center the card-container
 const Catalogue = () => {
     return (
         <section id="catalogue-page">
             <h1 style={styles.heading}>All Posts</h1>
-            <div style={styles.cardContainer}>
+            <div id="card-container" style={styles.cardContainer}>
                 <div className="card border-3 rounded-3 mb-3" style={styles.card}>
                     <div className="row g-0">
                         <div className="col-md-4">
@@ -15,7 +16,7 @@ const Catalogue = () => {
                                 <h5 className="card-title">Card title</h5>
                                 <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 <div>
-                                    <a href="/details" className="btn btn-primary" style={styles.button}>Details</a>
+                                    <Link to="/details" className="btn btn-primary" style={styles.button}>Details</Link>
                                 </div>
                             </div>
                         </div>
@@ -31,7 +32,7 @@ const Catalogue = () => {
                                 <h5 className="card-title">Card title</h5>
                                 <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 <div>
-                                    <a href="/details" className="btn btn-primary" style={styles.button}>Details</a>
+                                    <Link to="/details" className="btn btn-primary" style={styles.button}>Details</Link>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +47,7 @@ const Catalogue = () => {
                                 <h5 className="card-title">Card title</h5>
                                 <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 <div>
-                                    <a href="/details" className="btn btn-primary" style={styles.button}>Details</a>
+                                    <Link to="/details" className="btn btn-primary" style={styles.button}>Details</Link>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +63,7 @@ const Catalogue = () => {
                                 <h5 className="card-title">Card title</h5>
                                 <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 <div>
-                                    <a href="/details" className="btn btn-primary" style={styles.button}>Details</a>
+                                    <Link to="/details" className="btn btn-primary" style={styles.button}>Details</Link>
                                 </div>
                             </div>
                         </div>
@@ -89,9 +90,11 @@ const styles = {
         boxShadow: "1px 2px 15px 1px rgba(20, 20, 20, 0.1)"
     },
     cardContainer: {
-        padding: "1%",
-        marginLeft: "10%",
-        marginRight: "10%",
+        padding: "5%",
+        // paddingLeft: "5%",
+        // paddingRight: "5%",
+        marginLeft: "auto",
+        marginRight: "auto",
         // margin: "auto",
         // width: "60%",
     },
