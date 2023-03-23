@@ -5,7 +5,7 @@ const Catalogue = () => {
         <section id="catalogue-page">
             <h1 style={styles.heading}>All Posts</h1>
             <div style={styles.cardContainer}>
-                <div className="card border-3 rounded-3 mb-3" style={styles.div}>
+                <div className="card border-3 rounded-3 mb-3" style={styles.card}>
                     <div className="row g-0">
                         <div className="col-md-4">
                             <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/91l1EHFs8dL.jpg" className="img-fluid rounded-start" alt="..." />
@@ -21,7 +21,7 @@ const Catalogue = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card border-3 rounded-3 mb-3" style={styles.div}>
+                <div className="card border-3 rounded-3 mb-3" style={styles.card}>
                     <div className="row g-0">
                         <div className="col-md-4">
                             <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/91l1EHFs8dL.jpg" className="img-fluid rounded-start" alt="..." />
@@ -36,7 +36,7 @@ const Catalogue = () => {
                             </div>
                         </div>
                     </div>
-                </div><div className="card border-3 rounded-3 mb-3" style={styles.div}>
+                </div><div className="card border-3 rounded-3 mb-3" style={styles.card}>
                     <div className="row g-0">
                         <div className="col-md-4">
                             <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/91l1EHFs8dL.jpg" className="img-fluid rounded-start" alt="..." />
@@ -52,7 +52,7 @@ const Catalogue = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card border-4 rounded-3 mb-3" style={styles.div}>
+                <div className="card border-4 rounded-3 mb-3" style={styles.card}>
                     <div className="row g-0">
                         <div className="col-md-4">
                             <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/91l1EHFs8dL.jpg" className="img-fluid rounded-start" alt="..." />
@@ -77,10 +77,10 @@ const Catalogue = () => {
 const styles = {
     heading: {
         paddingTop: "5%",
-        padding: "2%",
+        paddingBottom: "2%",
         textAlign: "center"
     },
-    div: {
+    card: {
         maxWidth: "540px",
         borderColor: "#ffe45e",
         display: "inline-block",
@@ -94,6 +94,8 @@ const styles = {
         padding: "1%",
         marginLeft: "10%",
         marginRight: "10%",
+        // margin: "auto",
+        // width: "60%",
     },
     button: {
         backgroundColor: "#ffe45e",

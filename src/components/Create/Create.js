@@ -2,6 +2,7 @@ import React from 'react';
 
 const Create = () => {
     return (
+        // TODO: borders + shadow on login, create, register forms (like the borders on the catalogue page)
         <form className="row g-3" style={styles.form}>
             <h1 style={styles.heading}>CREATE A POST</h1>
 
@@ -78,7 +79,7 @@ const styles = {
     form: {
         paddingTop: "1.5%",
         paddingLeft: "35%",
-        paddingRight: "35%"
+        paddingRight: "35%",
     },
     heading: {
         paddingTop: "5%",
