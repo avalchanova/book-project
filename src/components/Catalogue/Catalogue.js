@@ -87,8 +87,6 @@ const styles = {
         justifyContent: "space-between",
         margin: '10px',
         boxShadow: "1px 2px 15px 1px rgba(20, 20, 20, 0.1)"
-        // borderColor: "#e91e63",
-        // borderColor: "#f58d93", //too pale
     },
     cardContainer: {
         padding: "1%",
