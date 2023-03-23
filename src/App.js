@@ -11,7 +11,7 @@ import BookDetails from './components/BookDetails/BookDetails.js';
 
 function App() {
     return (
-        <div className="App">
+        <div className="App" style={styles.appContainer}>
             <Navbar />
 
             <Routes>
@@ -23,9 +23,14 @@ function App() {
                 <Route path='/details' element={<BookDetails />} />
             </Routes>
 
-            {/* <Footer /> */}
+            <Footer />
         </div>
     );
 };
-
+const styles = {
+    appContainer: {
+        minHeight: "100vh",
+        position: "relative"
+    }
+};
 export default App;
