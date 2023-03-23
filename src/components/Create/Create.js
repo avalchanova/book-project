@@ -19,10 +19,10 @@ const Create = () => {
                     <label htmlFor="inputImageUrl" className="form-label">Image URL</label>
                     <input type="text" className="form-control" id="inputImageUrl" placeholder="https://" />
                 </div>
-                {/* <div className="col-12">
+                <div className="col-12">
                     <label htmlFor="inputSummary" className="form-label">Summary</label>
                     <input type="text" className="form-control" id="inputSummary" placeholder="" />
-                </div> */}
+                </div>
                 <div className="col-12">
                     <label htmlFor="inputState" className="form-label">Genre</label>
                     <select id="inputState" className="form-select">
@@ -81,6 +81,7 @@ const styles = {
         marginLeft: "auto",
         marginRight: "auto",
         marginTop: "5%",
+        // marginBottom: "10px",
         maxWidth: "540px",
         borderColor: "#ffe45e",
         boxShadow: "1px 2px 15px 10px rgba(20, 20, 20, 0.1)"

@@ -78,7 +78,7 @@ const Catalogue = () => {
 const styles = {
     heading: {
         paddingTop: "5%",
-        paddingBottom: "2%",
+        // paddingBottom: "2%",
         textAlign: "center"
     },
     card: {
