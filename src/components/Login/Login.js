@@ -1,35 +1,44 @@
 import React from 'react';
-
+// TODO: yellow borders on auth forms and create form 
 const Login = () => {
     return (
-        <form style={styles.form}>
-            <h1 style={styles.heading}>LOGIN</h1>
-            <div className="mb-3">
-                <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-            </div>
-            <div className="mb-3">
-                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                <input type="password" className="form-control" id="exampleInputPassword1" />
-            </div>
-            {/* <div className="mb-3 form-check">
+        <div className="card border-4 rounded-3 mb-3" style={styles.mainContainer}>
+            <form style={styles.form}>
+                <h1 style={styles.heading}>LOGIN</h1>
+                <div className="mb-3">
+                    <label htmlFor="exampleInputEmail1" className="form-label form-outline w-25">Email address</label>
+                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+                    <input type="password" className="form-control" id="exampleInputPassword1" />
+                </div>
+                {/* <div className="mb-3 form-check">
                 <input type="checkbox" className="form-check-input" id="exampleCheck1" /> */}
-            {/* <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label> */}
-            {/* </div> */}
-            <div className="signup-link">
-                Not a member? <a href="/register">Register now</a>
-            </div>
-            <div style={styles.buttonContainer}>
-                <button type="submit" className="btn btn-primary" style={styles.button}>Login</button>
-            </div>
-        </form>
+                {/* <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label> */}
+                {/* </div> */}
+                <div className="signup-link">
+                    Not a member? <a href="/register">Register now</a>
+                </div>
+                <div style={styles.buttonContainer}>
+                    <button type="submit" className="btn btn-primary" style={styles.button}>Login</button>
+                </div>
+            </form>
+        </div>
     );
 };
 const styles = {
+    mainContainer: {
+        marginLeft: "auto",
+        marginRight: "auto",
+        marginTop: "5%",
+        maxWidth: "540px",
+        borderColor: "#ffe45e",
+        boxShadow: "1px 2px 15px 10px rgba(20, 20, 20, 0.1)"
+    },
     form: {
-        paddingTop: "5%",
-        paddingLeft: "40%",
-        paddingRight: "40%"
+        paddingLeft: "10%",
+        paddingRight: "10%",
     },
     heading: {
         paddingTop: "5%",
@@ -41,7 +50,8 @@ const styles = {
         border: 'none',
     },
     buttonContainer: {
-        paddingTop: '10px',
+        paddingTop: '15px',
+        paddingBottom: "25px",
         justifyContent: 'center',
         display: 'flex',
     }
