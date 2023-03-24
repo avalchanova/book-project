@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Header = () => {
     return (
         <nav className="navbar navbar-expand-lg" style={styles.navBarContainer}>
             <div className="container-fluid">
@@ -57,4 +57,4 @@ const styles = {
     }
 };
 
-export default Navbar;
+export default Header;
