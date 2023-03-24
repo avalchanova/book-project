@@ -1,31 +1,51 @@
-import React from 'react';
+import { useState } from "react";
 
-const Create = () => {
+const Create = ({ onCreateSubmit }) => {
+    const [values, setValues] = useState({
+        title: "",
+        author: "",
+        imageUrl: "",
+        summary: "",
+        genre: "",
+        favouriteQuote: "",
+        year: "",
+        tropes: "",
+        pages: "",
+    });
+    const onChangeHandler = (e) => {
+        setValues(state => ({ ...state, [e.target.name]: e.target.value }));
+    };
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        console.log(values);
+        onCreateSubmit(values);
+    };
     return (
         // TODO: borders + shadow on login, create, register forms (like the borders on the catalogue page)
         <div className='card border-4 rounded-3 mb-3' style={styles.mainContainer}>
-            <form className="row g-3" style={styles.form}>
+            <form className="row g-3" onSubmit={onSubmit} style={styles.form}>
                 <h1 style={styles.heading}>CREATE A POST</h1>
 
                 <div className="col-md-6 p3">
                     <label htmlFor="inputTitlel4" className="form-label">Title</label>
-                    <input type="text" className="form-control" id="inputTitle4" placeholder="Little Women" />
+                    <input type="text" className="form-control" id="inputTitle4" value={values.title} name="title" onChange={onChangeHandler} placeholder="Little Women" />
                 </div>
                 <div className="col-md-6">
                     <label htmlFor="inputAuthor4" className="form-label">Author</label>
-                    <input type="text" className="form-control" id="inputAuthor4" placeholder="Louisa May Alcott" />
+                    <input type="text" className="form-control" id="inputAuthor4" value={values.author} name="author" onChange={onChangeHandler} placeholder="Louisa May Alcott" />
                 </div>
                 <div className="col-12">
                     <label htmlFor="inputImageUrl" className="form-label">Image URL</label>
-                    <input type="text" className="form-control" id="inputImageUrl" placeholder="https://" />
+                    <input type="text" className="form-control" id="inputImageUrl" value={values.imageUrl} name="imageUrl" onChange={onChangeHandler} placeholder="https://" />
                 </div>
                 <div className="col-12">
                     <label htmlFor="inputSummary" className="form-label">Summary</label>
-                    <input type="text" className="form-control" id="inputSummary" placeholder="" />
+                    <input type="text" className="form-control" id="inputSummary" value={values.summary} name="summary" onChange={onChangeHandler} />
                 </div>
                 <div className="col-12">
                     <label htmlFor="inputState" className="form-label">Genre</label>
-                    <select id="inputState" className="form-select">
+                    <select id="inputState" className="form-select" value={values.genre} name="genre" onChange={onChangeHandler}>
                         <option selected>Choose...</option>
                         <option value="adventure">Adventure</option>
                         <option value="childrensFiction">Children's Fiction</option>
@@ -44,11 +64,11 @@ const Create = () => {
                 </div>
                 <div className="col-12">
                     <label htmlFor="inputFavouriteQuote" className="form-label">Favourite Quote</label>
-                    <input type="text" className="form-control" id="inputFavouriteQuote" placeholder="Conceit spoils the finest genius." />
+                    <input type="text" className="form-control" id="inputFavouriteQuote" value={values.favouriteQuote} name="favouriteQuote" onChange={onChangeHandler} placeholder="Conceit spoils the finest genius." />
                 </div>
                 <div className="col-12">
                     <label htmlFor="inputFavouriteQuote" className="form-label">Year of Publication</label>
-                    <input type="text" className="form-control" id="inputFavouriteQuote" placeholder="1868" />
+                    <input type="text" className="form-control" id="inputFavouriteQuote" value={values.year} name="year" onChange={onChangeHandler} placeholder="1868" />
                 </div>
 
                 {/* <div className="col-12">
@@ -57,20 +77,21 @@ const Create = () => {
             </div> */}
                 <div className="col-md-6">
                     <label htmlFor="inputTropes" className="form-label">Tropes</label>
-                    <input type="text" className="form-control" id="inputTropes" />
+                    <input type="text" className="form-control" id="inputTropes" value={values.tropes} name="tropes" onChange={onChangeHandler} />
                 </div>
                 <div className="col-md-6">
                     <label htmlFor="inputPages" className="form-label">Pages</label>
-                    <input type="text" className="form-control" id="inputPages" />
+                    <input type="text" className="form-control" id="inputPages" value={values.pages} name="pages" onChange={onChangeHandler} />
                 </div>
-                <div className="col-12" >
+                {/* TODO: how do you manage a radio button value? */}
+                {/* <div className="col-12" >
                     <div className="form-check">
-                        <input className="form-check-input" type="checkbox" id="gridCheck" />
+                        <input className="form-check-input" type="checkbox" value={values.partOfSeries} id="gridCheck" />
                         <label className="form-check-label" htmlFor="gridCheck" style={styles.radioButtonTxt}>Part of a series</label>
                     </div>
-                </div>
+                </div> */}
                 <div className="col-12" style={styles.buttonContainer}>
-                    <button type="submit" className="btn" style={styles.button}>Create Post</button>
+                    <button type="submit" className="btn" value="Create Post" style={styles.button}>Create Post</button>
                 </div>
             </form>
         </div>
@@ -97,7 +118,7 @@ const styles = {
     heading: {
         paddingTop: "5%",
         paddingBottom: "2%",
-        textAlign: "center"
+        textAlign: "center",
     },
     button: {
         backgroundColor: "#ffe45e",
