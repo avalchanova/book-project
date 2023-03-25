@@ -1,0 +1,29 @@
+nav {
+    background-color: rgb(202 225 242);
+
+}
+.navigation li :hover {
+    text-decoration: underline;
+}
+
+#navBarAuth {
+    display: flex;
+    flex-direction: row;
+}
+
+img, svg{
+    height: 50px;
+
+}
+
+#login {
+    list-style-type: none;
+}
+
+#logout {
+    list-style-type: none;
+}
+
+#register {
+    list-style-type: none;
+}
