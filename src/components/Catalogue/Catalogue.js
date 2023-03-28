@@ -1,6 +1,6 @@
 import React from 'react';
 import CatalogueItem from './CatalogueItem/CatalogueItem.js';
-
+// TODO: the whole catalogue is not centered and is driving me nuts but here i am writing todos :)
 const Catalogue = ({ books }) => {
     return (
         <section id="catalogue-page">
@@ -10,7 +10,7 @@ const Catalogue = ({ books }) => {
                     <CatalogueItem key={x._id} {...x} />
                 )}
                 {books.length === 0 && (
-                    <h3 className="no-articles">No posts yet</h3>
+                    <h3 style={styles.hThree} className="no-articles">No posts yet</h3>
                 )}
             </div>
         </section>
@@ -27,5 +27,8 @@ const styles = {
         marginLeft: "auto",
         marginRight: "auto",
     },
+    hThree: {
+        textAlign: "center",
+    }
 };
 export default Catalogue;
