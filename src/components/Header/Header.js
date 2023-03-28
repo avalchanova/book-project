@@ -7,7 +7,7 @@ import styles from './Header.module.css';
 
 const Header = () => {
     // TODO: add first name of the logged in user in the header
-    const { isAuthenticated } = useContext(AuthContext);
+    const { isAuthenticated, userEmail } = useContext(AuthContext);
     return (
         <nav className={styles.navigation}>
             <nav className="navbar navbar-expand-lg">
@@ -27,19 +27,25 @@ const Header = () => {
                             </li>
                             {/* Logged-in Users */}
                             {isAuthenticated && (
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/create">Create</NavLink>
-                                </li>
+                                <div>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to="/create">Create</NavLink>
+                                    </li>
+                                </div>
                             )}
+
                         </ul>
                         <ul className="navbar-nav mb-2 mb-lg-0 navbar-right">
-
-                            <li className="nav-item" id="login">
-                                <NavLink className="nav-link" to="/login">Login</NavLink>
-                            </li>
-                            <li className="nav-item" id="register">
-                                <NavLink className="nav-link" to="/register">Register</NavLink>
-                            </li>
+                            {!isAuthenticated && (
+                                <li className="nav-item" id="login">
+                                    <NavLink className="nav-link" to="/login">Login</NavLink>
+                                </li>
+                            )}
+                            {!isAuthenticated && (
+                                <li className="nav-item" id="register">
+                                    <NavLink className="nav-link" to="/register">Register</NavLink>
+                                </li>
+                            )}
                             {/* Logged-in Users */}
                             {isAuthenticated && (
                                 <li className="nav-item" id="logout">
