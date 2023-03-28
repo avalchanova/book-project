@@ -57,6 +57,7 @@ const Create = ({ onCreateSubmit }) => {
                         <option value="romance">Romance</option>
                         <option value="scienceFiction">Science Fiction</option>
                         <option value="thriller">Thriller</option>
+                        <option value="tragedy">Tragedy</option>
                         <option value="youngAdult">Young Adult</option>
                         <option value="nonfiction">Nonfiction</option>
                         <option value="other">Other</option>
