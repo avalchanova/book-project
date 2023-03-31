@@ -23,9 +23,12 @@ const styles = {
         textAlign: "center"
     },
     cardContainer: {
-        padding: "5%",
-        marginLeft: "auto",
+        // padding: "5%",
+        marginLeft: "12%",
         marginRight: "auto",
+
+        margin: "auto",
+        // width: "90%",
     },
     hThree: {
         textAlign: "center",

@@ -11,7 +11,7 @@ const CatalogueItem = ({
         <div className="card border-3 rounded-3 mb-3" style={styles.card}>
             <div className="row g-0">
                 <div className="col-md-4">
-                    <img src={imageUrl} className="img-fluid rounded-start" alt="bookCover" />
+                    <img src={imageUrl} style={styles.img} className="img-fluid rounded-start" alt="bookCover" />
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">
@@ -33,10 +33,15 @@ const styles = {
         height: "280px",
         borderColor: "#ffe45e",
         display: "inline-block",
-        justifyContent: "space-between",
-        margin: '10px',
+        justifyContent: "space-evenly",
+        margin: '30px',
         boxShadow: "1px 2px 15px 1px rgba(20, 20, 20, 0.1)"
-    }, button: {
+    },
+    // img: {
+    //     maxWidth: '100%',
+    //     maxHeight: '100%',
+    // },
+    button: {
         backgroundColor: "#ffe45e",
         border: 'none',
     }
