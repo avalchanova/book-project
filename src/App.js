@@ -36,6 +36,7 @@ function App() {
     const onLoginSubmit = async (data) => {
         try {
             const result = await authService.login(data);
+            console.log(result);
             setAuth(result); // what exactly is happening here? probably setting the authentication in the setter
             navigate('/catalogue');
         } catch (error) {
@@ -59,7 +60,7 @@ function App() {
             setAuth(result); // ?? again what is happening here
             navigate('/');
         } catch (error) {
-            console.log('There is a problem');
+            console.log(error.message);
         }
     };
 
@@ -90,11 +91,13 @@ function App() {
         userId: auth._id,
         token: auth.accessToken,
         userEmail: auth.email,
+        // userFirstName: auth.FirstName,
         isAuthenticated: !!auth.accessToken
         // isAuthenticated will check if there is an access token
         // this is double negation: it returns each truthy value in true and each falsy value in false
         // for instance a string "afvjd" will be converted in false and then finally in true
     };
+    // console.log(userFirstName);
 
     return (
         <AuthContext.Provider value={contextValues}>
