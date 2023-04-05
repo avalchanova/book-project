@@ -37,11 +37,11 @@ function App() {
         try {
             const result = await authService.login(data);
             console.log(result);
-            setAuth(result); // what exactly is happening here? probably setting the authentication in the setter
+            setAuth(result);
             navigate('/catalogue');
         } catch (error) {
             // TODO: better error handling
-            console.log('There is a problem here');
+            console.log(error.message);
         }
     };
 
