@@ -22,19 +22,19 @@ export const bookServiceFactory = (token) => {
 
     const edit = (bookId, data) => request.put(`${baseUrl}/${bookId}`, data);
 
-    const deleteGame = (gameId) => request.delete(`${baseUrl}/${gameId}`);
+    const deleteBook = (bookId) => request.delete(`${baseUrl}/${bookId}`);
 
-    const addComment = async (bookId, data) => {
-        const result = await request.post(`${baseUrl}/${bookId}/comments`, data);
-        return result;
-    };
+    // const addComment = async (bookId, data) => {
+    //     const result = await request.post(`${baseUrl}/${bookId}/comments`, data);
+    //     return result;
+    // };
 
     return {
         getAll,
         getOne,
         create,
         edit,
-        deleteGame,
-        addComment,
+        deleteBook,
+        // addComment,
     };
 };
