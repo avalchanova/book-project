@@ -10,6 +10,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
     const onSubmit = (e) => {
         e.preventDefault();
         onSubmitHandler(values);
+        setValues(initialValues); //зануляваме формата след като сме изпратили датата <3 
     };
 
     const changeValues = (newValues) => {
