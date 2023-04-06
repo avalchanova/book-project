@@ -1,4 +1,4 @@
-const request = async (method, token, url, data) => {
+const request = async (method, url, data) => {
     const options = {};
 
     if (method !== "GET") {
@@ -11,11 +11,15 @@ const request = async (method, token, url, data) => {
             options.body = JSON.stringify(data);
         }
     }
-    if (token) {
-        options.headers = {
-            ...options.headers, // destructuring helps us save the other headers and add a new property
-            'X-Authorization': token,
-        };
+    const serializedAuth = localStorage.getItem('auth');
+    if (serializedAuth) {
+        const auth = JSON.parse(serializedAuth);
+        if (auth.accessToken) {
+            options.headers = {
+                ...options.headers, // destructuring saves the other headers and add a new property
+                'X-Authorization': auth.accessToken
+            };
+        }
     }
 
     const response = await fetch(url, options);
@@ -33,13 +37,13 @@ const request = async (method, token, url, data) => {
 
 };
 // Factory function is a function which will create an object
-export const requestFactory = (token) => {
+export const requestFactory = () => {
     return {
-        get: request.bind(null, "GET", token),
-        post: request.bind(null, "POST", token),
-        put: request.bind(null, "PUT", token),
-        delete: request.bind(null, "DELETE", token),
-        patch: request.bind(null, "PATCH", token),
+        get: request.bind(null, "GET"),
+        post: request.bind(null, "POST"),
+        put: request.bind(null, "PUT"),
+        delete: request.bind(null, "DELETE"),
+        patch: request.bind(null, "PATCH"),
     };
 }
 // export const patch = request.bind(null, "PATCH");
