@@ -9,7 +9,7 @@ const CatalogueItem = ({
 }) => {
     return (
         <div className="card border-3 rounded-3 mb-3" style={styles.card}>
-            <div className="row g-0">
+            < div className="row g-0" >
                 <div className="col-md-4">
                     <img src={imageUrl} style={styles.img} className="img-fluid rounded-start" alt="bookCover" />
                 </div>
@@ -18,12 +18,12 @@ const CatalogueItem = ({
                         <h4 className="card-title">{title}</h4>
                         <p className="card-text">{summary}</p>
                         <div>
-                            <Link to={`/catalog/${_id}`} className="btn btn-primary" style={styles.button}>Details</Link>
+                            <Link to={`/catalogue/${_id}`} className="btn btn-primary" style={styles.button}>Details</Link>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 const styles = {
@@ -37,10 +37,6 @@ const styles = {
         margin: '30px',
         boxShadow: "1px 2px 15px 1px rgba(20, 20, 20, 0.1)"
     },
-    // img: {
-    //     maxWidth: '100%',
-    //     maxHeight: '100%',
-    // },
     button: {
         backgroundColor: "#ffe45e",
         border: 'none',
