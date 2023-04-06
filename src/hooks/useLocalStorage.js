@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"; // ?? useState ??
 
 export const useLocalStorage = (key, initialValue) => {
     // local storage vs state:
@@ -29,7 +29,7 @@ export const useLocalStorage = (key, initialValue) => {
 
     const setLocalStorageState = (value) => {
         setState(value);
-        localStorage.getItem(key, JSON.stringify(value));
+        localStorage.setItem(key, JSON.stringify(value));
     };
 
     return [
@@ -37,3 +37,5 @@ export const useLocalStorage = (key, initialValue) => {
         setLocalStorageState
     ];
 };
+
+//DONE

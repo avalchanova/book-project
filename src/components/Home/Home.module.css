@@ -1,0 +1,29 @@
+#homeImgGirl {
+    display: 'flex';
+    justify-content: 'end';
+}
+img {
+    height: "700px";
+}
+#headingOne {
+    padding-left: "100px";
+    padding-top: "100px";
+    display: 'flex';
+    justify-content: 'start';
+}
+#headingTwo {
+    padding-left: "100px";
+    padding-top: "20px";
+
+    display: 'flex';
+    justify-content: 'start';
+}
+#firstParagraphContainer {
+    display: 'flex';
+    flex-direction: 'row'
+}
+#headingsContainer {
+    display: 'flex';
+    flex-direction: 'column';
+    min-width: '60%';
+}

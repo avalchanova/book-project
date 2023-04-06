@@ -163,9 +163,4 @@ const styles = {
         display: 'flex',
     }
 };
-
-
-
-
-
 export default Register;

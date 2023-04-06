@@ -3,17 +3,17 @@ import React from 'react';
 const Home = () => {
     return (
         <div>
-            <div style={styles.firstParagraphContainer}>
-                <div style={styles.headingsContainer}>
-                    <div style={styles.headingOne}>
+            <div id="firstParagraphContainer" style={styles.firstParagraphContainer}>
+                <div id="headingsContainer" style={styles.headingsContainer}>
+                    <div id="headingOne" style={styles.headingOne}>
                         <h1 >The Book Nook</h1>
                     </div>
-                    <div style={styles.headingTwo}>
+                    <div id="headingTwo" style={styles.headingTwo}>
                         <h3 >Where every bookworm feels at home</h3>
                     </div>
                 </div>
                 <div>
-                    <div style={styles.homeImgGirl}>
+                    <div id="homeImgGirl" style={styles.homeImgGirl}>
                         <img src="../homePhoto.jpeg" alt="Reading girl" style={styles.homeImg} />
                     </div>
                 </div>
