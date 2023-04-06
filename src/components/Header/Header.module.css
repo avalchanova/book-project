@@ -27,3 +27,7 @@ img, svg{
 #register {
     list-style-type: none;
 }
+
+span {
+    float: center
+}
