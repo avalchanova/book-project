@@ -6,7 +6,7 @@ export const bookServiceFactory = (token) => {
     const request = requestFactory(token);
     const getAll = async () => {
         const result = await request.get(baseUrl);
-        const books = Object.values(result); //we are modifying the data here because the result comes as an {} with ID and the value of the ID is the whole content of the game = name, description, categories
+        const books = Object.values(result); //we are modifying the data here because the result comes as an {} with ID and the value of the ID is the whole content of the book = name, description, categories
         return books;
     };
 
@@ -34,7 +34,7 @@ export const bookServiceFactory = (token) => {
         getOne,
         create,
         edit,
-        deleteBook,
+        delete: deleteBook
         // addComment,
     };
 };
