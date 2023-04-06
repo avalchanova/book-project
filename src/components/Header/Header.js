@@ -1,13 +1,17 @@
 // TODO CSS: import styles from './Navigation.module.css';
-import { AuthContext } from '../../contexts/AuthContext.js';
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthContext.js';
 import styles from './Header.module.css';
 
 
 const Header = () => {
     // TODO: add first name of the logged in user in the header
-    const { isAuthenticated, userEmail } = useContext(AuthContext);
+    const { isAuthenticated, name } = useContext(AuthContext);
+    // console.log(name);
+    console.log(isAuthenticated);
+
+    // console.log(firstName);
     return (
         <nav className={styles.navigation}>
             <nav className="navbar navbar-expand-lg">
@@ -23,33 +27,33 @@ const Header = () => {
                                 <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/catalogue">Catalogue</NavLink>
+                                <NavLink className="nav-link active" to="/catalogue">Catalogue</NavLink>
                             </li>
-                            {/* Logged-in Users */}
                             {isAuthenticated && (
-                                <div>
-                                    <li className="nav-item">
-                                        <NavLink className="nav-link" to="/create">Create</NavLink>
-                                    </li>
-                                </div>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link active" to="/create">Create</NavLink>
+                                </li>
                             )}
-
                         </ul>
                         <ul className="navbar-nav mb-2 mb-lg-0 navbar-right">
                             {!isAuthenticated && (
                                 <li className="nav-item" id="login">
-                                    <NavLink className="nav-link" to="/login">Login</NavLink>
+                                    <NavLink className="nav-link active" to="/login">Login</NavLink>
                                 </li>
                             )}
                             {!isAuthenticated && (
                                 <li className="nav-item" id="register">
-                                    <NavLink className="nav-link" to="/register">Register</NavLink>
+                                    <NavLink className="nav-link active" to="/register">Register</NavLink>
                                 </li>
                             )}
-                            {/* Logged-in Users */}
+                            {isAuthenticated && (
+                                <li>
+                                    <NavLink className="nav-link active" to="#">{name}</NavLink>
+                                </li>
+                            )}
                             {isAuthenticated && (
                                 <li className="nav-item" id="logout">
-                                    <NavLink className="nav-link" to="/logout">Logout</NavLink>
+                                    <NavLink className="nav-link active" to="/logout">Logout</NavLink>
                                 </li>
                             )}
                         </ul>
