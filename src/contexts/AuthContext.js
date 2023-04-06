@@ -18,11 +18,15 @@ export const AuthProvider = ({
     // react does not have a close connection with the local storage so it does not know when there is a change
 
     const authService = authServiceFactory(auth.accessToken);
+    // console.log('accessToken   ' + auth.accessToken);
+    // console.log(auth);
 
     const onLoginSubmit = async (data) => {
         try {
             const result = await authService.login(data);
+            // console.log(result);
             setAuth(result);
+            // console.log(auth);
             navigate('catalogue');
         } catch (error) {
             console.log(error.message);
@@ -47,7 +51,8 @@ export const AuthProvider = ({
     const onLogout = async () => {
         await authService.logout(); //will logout on the server
         setAuth({}); //will logout on the client
-        localStorage.clear(); //clears the auth
+        // localStorage.clear(); //clears the auth
+        localStorage.removeItem('auth');
         navigate('/');
     };
 
@@ -59,7 +64,7 @@ export const AuthProvider = ({
         userId: auth._id,
         token: auth.accessToken,
         name: auth.firstName,
-        isAuthenticated: !!auth.acessToken
+        isAuthenticated: !!auth.accessToken,
         // this is double negation
         // it returns each truthy value in true and each falsy value in false
         // for instance a string "afvjd" will be converted in false and then finally in true
@@ -67,9 +72,11 @@ export const AuthProvider = ({
     // console.log(contextValues.firstName);
 
     return (
-        <AuthContext value={contextValues}>
-            {children}
-        </AuthContext>
+        <>
+            <AuthContext.Provider value={contextValues}>
+                {children}
+            </AuthContext.Provider>
+        </>
     );
 };
 
@@ -77,3 +84,5 @@ export const useAuthContext = () => {
     const context = useContext(AuthContext);
     return context;
 };
+
+//DONE
