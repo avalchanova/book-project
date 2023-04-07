@@ -12,7 +12,8 @@ export const AuthProvider = ({
     children,
     //in props there is always a property "children"
 }) => {
-    const [auth, setAuth] = useLocalStorage('auth', {});
+    const [auth, setAuth] = useLocalStorage('auth', {}); // вместо useState({})
+    // useLocalStorage взема име и дефолт валю -> аут и празен масив
     const navigate = useNavigate();
     // this state has to persist in the local storage because when refreshed the user is automatically logged out
     // react does not have a close connection with the local storage so it does not know when there is a change
