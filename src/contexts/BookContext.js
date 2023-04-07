@@ -30,7 +30,7 @@ export const BookProvider = ({ children }) => {
     const onBookEditSubmit = async (values) => {
         const result = await bookService.edit(values._id, values); // the book is edited on the server
         setBooks(state => state.map(x => x._id === values._id ? result : x)); // the book is edited on the client
-        navigate(`/catalog/${values._id}`);
+        navigate(`/catalogue/${values._id}`);
     };
 
     const deleteBook = (bookId) => {
