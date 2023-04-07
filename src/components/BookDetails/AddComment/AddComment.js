@@ -9,8 +9,14 @@ const AddComment = ({
     return (
         <article>
             <div style={styles.commentContainer}>
-                <form action="" onSubmit={onSubmit}>
-                    <textarea name="comment" style={styles.textArea} placeholder="Comment..." value={values.comment} onChange={changeHandler}></textarea>
+                <form action="post" onSubmit={onSubmit}>
+                    <textarea
+                        name="comment"
+                        style={styles.textArea}
+                        placeholder="Comment..."
+                        value={values.comment}
+                        onChange={changeHandler}>
+                    </textarea>
                     <div id="buttonContainer" style={styles.buttonContainer}>
                         <button type="submit" className="btn btn-primary" style={styles.button}>Post</button>
                     </div>
@@ -22,15 +28,22 @@ const AddComment = ({
 
 
 const styles = {
-    button: {
-        backgroundColor: "#ffe45e",
-        border: 'none',
+    textArea: {
+        height: "5rem",
+        width: "15rem",
+        display: 'inline-block',
+        verticalAlign: "middle",
+        borderColor: "#ffe45e"
     },
     commentContainer: {
         paddingTop: '5px',
         paddingBottom: "25px",
         justifyContent: 'center',
         display: 'flex',
+    },
+    button: {
+        backgroundColor: "#ffe45e",
+        border: 'none',
     },
     buttonContainer: {
         paddingTop: '5px',
@@ -41,12 +54,5 @@ const styles = {
         display: 'inline-block',
         verticalAlign: "middle",
     },
-    textArea: {
-        height: "5rem",
-        width: "15rem",
-        display: 'inline-block',
-        verticalAlign: "middle",
-        borderColor: "#ffe45e"
-    }
 };
 export default AddComment;
