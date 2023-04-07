@@ -1,4 +1,4 @@
-import { useState } from "react"; // ?? useState ??
+import { useState } from "react"; // ?? useState ?? -- място където държим стейта..
 
 export const useLocalStorage = (key, initialValue) => {
     // local storage vs state:
@@ -15,6 +15,8 @@ export const useLocalStorage = (key, initialValue) => {
     const [state, setState] = useState(() => {
         // sterialized means in a string form
         const persistedStateSerialized = localStorage.getItem(key);
+
+        // ако е локалСторидж нещо е персистирало: следва да се обработи и да се ретърнне
         if (persistedStateSerialized) {
             const persistedState = JSON.parse(persistedStateSerialized);
             return persistedState;
@@ -28,6 +30,8 @@ export const useLocalStorage = (key, initialValue) => {
     });
 
     const setLocalStorageState = (value) => {
+        // value-то е новият стейт 
+        // localStorage ни служи, само с това да даде аут-а при рефреш, защото стейта губи данните
         setState(value);
         localStorage.setItem(key, JSON.stringify(value));
     };
