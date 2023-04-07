@@ -12,10 +12,7 @@ import { useBookContext } from '../../contexts/BookContext.js';
 
 const BookDetails = () => {
     const { bookId } = useParams(); // returns the id from the URL 
-    // console.log("bookID " + bookId);
-    // we set its name in the App.js, that is where it knows what the name is 
     const { userId, isAuthenticated, name } = useAuthContext();
-    // console.log(name);
     const { deleteBook } = useBookContext();
     const [book, dispatch] = useReducer(bookReducer, {}); // подава се функция и базовата стойност
     const bookService = useService(bookServiceFactory);
@@ -45,18 +42,15 @@ const BookDetails = () => {
         // we are adding the new comment to the state so there wont be necessary to refresh the page
         // for the new comment to appear
     };
-    // console.log(book);
-
     const isOwner = book._ownerId === userId; // if book._ownerId is equal to the logged in user, the isOwner will be true
     console.log(isOwner);
-    // console.log("user" + userId);
 
     const onDeleteClick = async () => {
         // eslint-disable-next-line no-restricted-globals
-        const result = confirm(`Are you certain you want to delete this book ${book.title}`); //will return true or false probably
+        const result = confirm(`Are you certain you want to delete this book ${book.title}`);
         // we have to create a method showDeleteModal if we want to have a pop up
 
-        if (result) { // after confirming in the modal 
+        if (result) {
             await bookService.delete(book._id); //deletes from server
             deleteBook(book._id); //deletes from state
             navigate('/catalogue');
@@ -80,7 +74,6 @@ const BookDetails = () => {
                         <p className="card-text">{book.summary}</p>
                         <p className="card-text" >Favourite Quote: {book.favouriteQuote}</p>
                         {isOwner && (
-                            // TODO: EDIT post
                             <div>
                                 <Link to={`/catalogue/${book._id}/edit`} className="btn btn-primary" style={styles.button1}>Edit</Link>
                                 <button className="btn btn-primary" onClick={onDeleteClick} style={styles.button2}>Delete</button>
@@ -106,8 +99,7 @@ const BookDetails = () => {
                     {book.comments?.length === 0 && (
                         <p className="no-comment">No comments.</p>
                     )}
-                    {/* we have optional chaining (the ? in book.comments?.length) because we have 
-                    to check if the even is an array comments and if there isnt show the paragraph No Comments*/}
+                    {/* we have optional chaining (for the comments) to show the paragraph No Comments*/}
                 </div>
             </div>
             {isAuthenticated && <AddComment onCommentSubmit={onCommentSubmit} />}
@@ -126,17 +118,6 @@ const styles = {
     },
     main: {
         textAlign: 'center',
-
-        // display: "inline-block",
-        // justifyContent: "space-between",
-        // verticalAlign: "block",
-
-        // marginLeft: '10%',
-        // border: "5px solid",
-        // margin: "auto",
-        // width: "1px",
-        // padding: "20px",
-
     },
     button: {
         backgroundColor: "#ffe45e",
@@ -152,22 +133,13 @@ const styles = {
     imageContainer: {
         display: 'inline-block',
         verticalAlign: "middle",
-        // borderColor: "255, 0, 0, 0.2",
         width: "18rem",
-        height: '25rem',
-        //     marginLeft: "28%",
-        //     float: "left",
-        //     height: "100px",
-        //     float: "left"
+        height: '24.5rem',
     },
     textContainer: {
-        // paddingLeft: "10px",
-        // marginRight: "15%",
         borderColor: "#ffe45e",
         width: "30rem",
-        // float: "left",
         height: "25rem",
-        // float: "left",
         display: 'inline-block',
         verticalAlign: "middle",
     },
@@ -185,10 +157,8 @@ const styles = {
     },
     outerCommentSection: {
         width: "600px",
-        // display: "inline-block",
         margin: "auto",
         border: "thick double #ffe45e"
-        // borderColor: "#ffe45e"
     }
 };
 
