@@ -10,7 +10,7 @@ const LoginFormKeys = {
 };
 
 export const Login = () => {
-    const { onLoginSubmit } = useAuthContext();
+    const { onLoginSubmit } = useAuthContext(); // спестява ни ползването на useContext(AuthContext)
     // through the context we created we have access to the onLoginSubmit func which is intiially created in App.js
     const { values, changeHandler, onSubmit } = useForm({ // ?? how does the form work exactly
         [LoginFormKeys.Email]: "",
