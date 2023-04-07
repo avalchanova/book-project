@@ -7,14 +7,16 @@ import { BookProvider } from './contexts/BookContext.js';
 import Home from './components/Home/Home.js';
 import Header from './components/Header/Header.js';
 import Footer from './components/Footer/Footer.js';
-import Create from './components/Create/Create.js';
-import Login from './components/Login/Login.js';
-import Logout from './components/Logout/Logout.js';
-import Register from './components/Register/Register.js';
 import Catalogue from './components/Catalogue/Catalogue.js';
+import Login from './components/Login/Login.js';
+import Register from './components/Register/Register.js';
+import Logout from './components/Logout/Logout.js';
+import Create from './components/Create/Create.js';
 import BookDetails from './components/BookDetails/BookDetails.js';
+import Edit from './components/Edit/Edit.js';
+import NotFound from './components/NotFound/NotFound.js';
 import { RouteGuard } from './components/common/RouteGuard.js';
-// import { BookOwner } from './components/common/BookOwner.js';
+import { BookOwner } from './components/common/BookOwner.js';
 
 
 function App() {
@@ -31,11 +33,15 @@ function App() {
                             <Route path='/catalogue' element={<Catalogue />} />
                             <Route path='/catalogue/:bookId' element={<BookDetails />} />
                             <Route element={<RouteGuard />}>
-                                {/* EDIT is here */}
+                                <Route path='/catalogue/:bookId/edit' element={
+                                    <BookOwner>
+                                        <Edit />
+                                    </BookOwner>
+                                } />
                                 <Route path='/create' element={<Create />} />
                                 <Route path='/logout' element={<Logout />} />
                             </Route>
-                            {/* <Route path='/catalogue/:bookId/edit' element={<Edit onBookEditSubmit={onBookEditSubmit} />} /> */}
+                            <Route path="*" element={<NotFound />} />
                         </Routes>
                     </main>
 
