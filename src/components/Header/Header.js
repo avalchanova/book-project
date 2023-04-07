@@ -9,7 +9,7 @@ const Header = () => {
     // TODO: add first name of the logged in user in the header
     const { isAuthenticated, name } = useContext(AuthContext);
     // console.log(name);
-    console.log(isAuthenticated);
+    // console.log(isAuthenticated);
 
     // console.log(firstName);
     return (

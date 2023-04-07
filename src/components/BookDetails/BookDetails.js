@@ -12,10 +12,10 @@ import { useBookContext } from '../../contexts/BookContext.js';
 
 const BookDetails = () => {
     const { bookId } = useParams(); // returns the id from the URL 
-    console.log(bookId);
+    // console.log("bookID " + bookId);
     // we set its name in the App.js, that is where it knows what the name is 
     const { userId, isAuthenticated, name } = useAuthContext();
-    console.log(name);
+    // console.log(name);
     const { deleteBook } = useBookContext();
     const [book, dispatch] = useReducer(bookReducer, {}); // подава се функция и базовата стойност
     const bookService = useService(bookServiceFactory);
@@ -45,11 +45,10 @@ const BookDetails = () => {
         // we are adding the new comment to the state so there wont be necessary to refresh the page
         // for the new comment to appear
     };
-    console.log(book);
+    // console.log(book);
 
     const isOwner = book._ownerId === userId; // if book._ownerId is equal to the logged in user, the isOwner will be true
-
-    console.log("creator " + book._ownerId);
+    console.log(isOwner);
     // console.log("user" + userId);
 
     const onDeleteClick = async () => {
@@ -83,7 +82,7 @@ const BookDetails = () => {
                         {isOwner && (
                             // TODO: EDIT post
                             <div>
-                                <Link to={`/catalog/${book._id}/edit`} className="btn btn-primary" style={styles.button1}>Edit</Link>
+                                <Link to={`/catalogue/${book._id}/edit`} className="btn btn-primary" style={styles.button1}>Edit</Link>
                                 <button className="btn btn-primary" onClick={onDeleteClick} style={styles.button2}>Delete</button>
                             </div>
                         )}
