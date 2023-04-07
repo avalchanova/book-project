@@ -14,7 +14,7 @@ export const bookReducer = (state, action) => {
                 comments: [
                     ...state.comments,
                     {
-                        ...action.payload, //this is action.comment
+                        ...action.payload, // payload is an abstract name in this case these are the comments
                         author: {
                             name: action.name
                         }
@@ -24,3 +24,7 @@ export const bookReducer = (state, action) => {
         default: return state;
     }
 };
+
+// REDUCER --> a function which mutates state? ???? whattttt 
+// i have no idea what is happening here
+// TODO: clear comments
