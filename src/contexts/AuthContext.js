@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext } from "react";
 // AuthContext is just a context which only purpose is to pass something to the children
 import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "../hooks/useLocalStorage.js";
@@ -14,34 +14,19 @@ export const AuthProvider = ({
 }) => {
     const [auth, setAuth] = useLocalStorage('auth', {}); // вместо useState({})
     // useLocalStorage взема име и дефолт валю -> аут и празен масив
-    const [loginError, setLoginError] = useState();
-    const [registerError, setRegisterError] = useState();
     const navigate = useNavigate();
     // this state has to persist in the local storage because when refreshed the user is automatically logged out
     // react does not have a close connection with the local storage so it does not know when there is a change
 
     const authService = authServiceFactory(auth.accessToken);
-    // console.log('accessToken   ' + auth.accessToken);
-    // console.log(auth);
-
-    useEffect(() => {
-        loginError && localStorage.setItem("loginError", JSON.stringify(loginError));
-    }, [loginError]);
-
-    useEffect(() => {
-        registerError && localStorage.setItem("registerError", JSON.stringify(registerError));
-    }, [registerError]);
 
     const onLoginSubmit = async (data) => {
         try {
             const result = await authService.login(data);
-            // console.log(result);
             setAuth(result);
-            // console.log(auth);
             navigate('/catalogue');
         } catch (error) {
             console.log(error.message);
-            setLoginError(error);
         }
     };
     const onRegisterSubmit = async (values) => {
@@ -57,7 +42,6 @@ export const AuthProvider = ({
             navigate('/catalogue');
         } catch (error) {
             console.log(error.message);
-            setRegisterError(error);
         }
     };
 
@@ -97,5 +81,3 @@ export const useAuthContext = () => {
     const context = useContext(AuthContext);
     return context;
 };
-
-//DONE

@@ -2,9 +2,6 @@ import { useAuthContext } from '../../contexts/AuthContext.js';
 import { useForm } from '../../hooks/useForm.js';
 import { Link } from 'react-router-dom';
 import './Login.module.css';
-import { useOnError } from '../../hooks/useOnError.js';
-import { ErrorModal } from '../../modals/Error/ErrorModal.js';
-import { useState, useEffect } from 'react';
 
 
 const LoginFormKeys = {
@@ -13,9 +10,6 @@ const LoginFormKeys = {
 };
 
 export const Login = () => {
-    const [errorState, setErrorState] = useState();
-
-    const { error } = useOnError('loginError');
     const { onLoginSubmit } = useAuthContext(); // спестява ни ползването на useContext(AuthContext)
     // through the context we created we have access to the onLoginSubmit func which is intiially created in App.js
     const { values, changeHandler, onSubmit } = useForm({ // ?? how does the form work exactly
