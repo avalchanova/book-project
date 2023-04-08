@@ -1,7 +1,6 @@
 import React from 'react';
 import { useBookContext } from '../../contexts/BookContext.js';
 import CatalogueItem from './CatalogueItem/CatalogueItem.js';
-// TODO: the whole catalogue is not centered and is driving me nuts but here i am writing todos :)
 const Catalogue = () => {
     const { books } = useBookContext();
     return (
@@ -27,12 +26,10 @@ const styles = {
         textAlign: "center"
     },
     cardContainer: {
-        // padding: "5%",
         marginLeft: "12%",
         marginRight: "auto",
         marginBottom: "4%",
         margin: "auto",
-        // width: "90%",
     },
     hThree: {
         textAlign: "center",

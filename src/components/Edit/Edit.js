@@ -135,11 +135,6 @@ const Edit = () => {
                         onChange={changeHandler}
                         placeholder="1868" />
                 </div>
-
-                {/* <div className="col-12">
-                <label htmlFor="inputGenre" className="form-label">Genre</label>
-                <input type="text" className="form-control" id="inputGenre" placeholder="Romance" />
-            </div> */}
                 <div className="col-md-6">
                     <label htmlFor="inputTropes" className="form-label">Tropes</label>
                     <input
@@ -160,13 +155,6 @@ const Edit = () => {
                         name={EditFormKeys.Pages}
                         onChange={changeHandler} />
                 </div>
-                {/* TODO: how do you manage a radio button value? */}
-                {/* <div className="col-12" >
-                    <div className="form-check">
-                        <input className="form-check-input" type="checkbox" value={values.partOfSeries} id="gridCheck" />
-                        <label className="form-check-label" htmlFor="gridCheck" style={styles.radioButtonTxt}>Part of a series</label>
-                    </div>
-                </div> */}
                 <div className="col-12" style={styles.buttonContainer}>
                     <button type="submit" className="btn" value="edit book" style={styles.button}>Edit Book</button>
                 </div>
@@ -180,12 +168,9 @@ const styles = {
         marginLeft: "auto",
         marginRight: "auto",
         marginTop: "5%",
-        // marginBottom: "10px",
         maxWidth: "540px",
         borderColor: "#ffe45e",
         boxShadow: "1px 2px 15px 10px rgba(20, 20, 20, 0.1)"
-
-        // alignItems: "center",
     },
     form: {
         paddingTop: "1.5%",

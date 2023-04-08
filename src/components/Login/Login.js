@@ -3,34 +3,20 @@ import { useForm } from '../../hooks/useForm.js';
 import { Link } from 'react-router-dom';
 import './Login.module.css';
 
-
 const LoginFormKeys = {
     Email: 'email',
     Password: 'password'
 };
 
 export const Login = () => {
-    const { onLoginSubmit } = useAuthContext(); // спестява ни ползването на useContext(AuthContext)
-    // through the context we created we have access to the onLoginSubmit func which is intiially created in App.js
-    const { values, changeHandler, onSubmit } = useForm({ // ?? how does the form work exactly
+    const { onLoginSubmit } = useAuthContext();
+    const { values, changeHandler, onSubmit } = useForm({
         [LoginFormKeys.Email]: "",
         [LoginFormKeys.Password]: "",
-        // formErrors: { email: '', password: '' },
-        // emailValid: false,
-        // passwordValid: false,
-        // formValid: false
     }, onLoginSubmit);
-
-    useEffect(() => {
-        if (error) {
-            console.log({ data: JSON.parse(error) });
-            setErrorState(JSON.parse(error));
-        }
-    }, [error]);
 
     return (
         <div>
-            {errorState && <ErrorModal title={"Login Failed"} body={errorState.message} errorKey={"loginError"} />}
             <div className="card border-4 rounded-3 mb-3" id="mainContainer" style={styles.mainContainer}>
                 <form id="login" className="needs-validation" noValidate method="POST" onSubmit={onSubmit} style={styles.form} >
                     <h1 style={styles.heading}>LOGIN</h1>

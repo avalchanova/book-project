@@ -11,10 +11,10 @@ import { bookReducer } from '../../reducers/bookReducer.js';
 import { useBookContext } from '../../contexts/BookContext.js';
 
 const BookDetails = () => {
-    const { bookId } = useParams(); // returns the id from the URL 
+    const { bookId } = useParams();
     const { userId, isAuthenticated, name } = useAuthContext();
     const { deleteBook } = useBookContext();
-    const [book, dispatch] = useReducer(bookReducer, {}); // подава се функция и базовата стойност
+    const [book, dispatch] = useReducer(bookReducer, {});
     const bookService = useService(bookServiceFactory);
     const navigate = useNavigate();
 
@@ -23,7 +23,6 @@ const BookDetails = () => {
             bookService.getOne(bookId),
             commentService.getAll(bookId),
         ]).then(([bookData, comments]) => {
-            // dispatch('Pesho')
             const bookState = {
                 ...bookData,
                 comments,
@@ -48,11 +47,10 @@ const BookDetails = () => {
     const onDeleteClick = async () => {
         // eslint-disable-next-line no-restricted-globals
         const result = confirm(`Are you certain you want to delete this book ${book.title}`);
-        // we have to create a method showDeleteModal if we want to have a pop up
 
         if (result) {
-            await bookService.delete(book._id); //deletes from server
-            deleteBook(book._id); //deletes from state
+            await bookService.delete(book._id);
+            deleteBook(book._id);
             navigate('/catalogue');
         }
     };
@@ -95,11 +93,9 @@ const BookDetails = () => {
                         </ul>
                     </div>
 
-
                     {book.comments?.length === 0 && (
                         <p className="no-comment">No comments.</p>
                     )}
-                    {/* we have optional chaining (for the comments) to show the paragraph No Comments*/}
                 </div>
             </div>
             {isAuthenticated && <AddComment onCommentSubmit={onCommentSubmit} />}

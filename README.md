@@ -56,3 +56,5 @@ useLocalStorage custom hook gets a key and initial value as arguments, sets the 
 
 # React Components
 The app uses controlled components. Login, Register and Create are c
+
+// TODO: complete documentation !!!!!!!!!!!

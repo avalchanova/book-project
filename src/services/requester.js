@@ -2,7 +2,6 @@ const request = async (method, url, data) => {
     const options = {};
 
     if (method !== "GET") {
-        //options are an empty object if the method is GET because the fetch does not need any data, only to URL to fetch a get request
         options.method = method;
         if (data) {
             options.headers = {
@@ -16,7 +15,7 @@ const request = async (method, url, data) => {
         const auth = JSON.parse(serializedAuth);
         if (auth.accessToken) {
             options.headers = {
-                ...options.headers, // destructuring saves the other headers and add a new property
+                ...options.headers,
                 'X-Authorization': auth.accessToken
             };
         }
@@ -36,7 +35,6 @@ const request = async (method, url, data) => {
     return result;
 
 };
-// Factory function is a function which will create an object
 export const requestFactory = () => {
     return {
         get: request.bind(null, "GET"),
@@ -45,5 +43,4 @@ export const requestFactory = () => {
         delete: request.bind(null, "DELETE"),
         patch: request.bind(null, "PATCH"),
     };
-}
-// export const patch = request.bind(null, "PATCH");
+};

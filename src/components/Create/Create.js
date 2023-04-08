@@ -75,11 +75,6 @@ export const Create = () => {
                     <label htmlFor="inputFavouriteQuote" className="form-label">Year of Publication</label>
                     <input type="number" className="form-control" id="inputFavouriteQuote" value={values.year} name={CreateFormKeys.Year} onChange={changeHandler} placeholder="1868" />
                 </div>
-
-                {/* <div className="col-12">
-                <label htmlFor="inputGenre" className="form-label">Genre</label>
-                <input type="text" className="form-control" id="inputGenre" placeholder="Romance" />
-            </div> */}
                 <div className="col-md-6">
                     <label htmlFor="inputTropes" className="form-label">Tropes</label>
                     <input type="text" className="form-control" id="inputTropes" value={values.tropes} name={CreateFormKeys.Tropes} onChange={changeHandler} />
@@ -88,13 +83,6 @@ export const Create = () => {
                     <label htmlFor="inputPages" className="form-label">Pages</label>
                     <input type="number" className="form-control" id="inputPages" value={values.pages} name={CreateFormKeys.Pages} onChange={changeHandler} />
                 </div>
-                {/* TODO: how do you manage a radio button value? */}
-                {/* <div className="col-12" >
-                    <div className="form-check">
-                        <input className="form-check-input" type="checkbox" value={values.partOfSeries} id="gridCheck" />
-                        <label className="form-check-label" htmlFor="gridCheck" style={styles.radioButtonTxt}>Part of a series</label>
-                    </div>
-                </div> */}
                 <div className="col-12" style={styles.buttonContainer}>
                     <button type="submit" className="btn" value="Create Post" style={styles.button}>Create Post</button>
                 </div>
@@ -107,12 +95,9 @@ const styles = {
         marginLeft: "auto",
         marginRight: "auto",
         marginTop: "5%",
-        // marginBottom: "10px",
         maxWidth: "540px",
         borderColor: "#ffe45e",
         boxShadow: "1px 2px 15px 10px rgba(20, 20, 20, 0.1)"
-
-        // alignItems: "center",
     },
     form: {
         paddingTop: "1.5%",

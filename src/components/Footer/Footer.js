@@ -1,5 +1,4 @@
 import React from 'react';
-// TODO: move CSS in external modules
 const Footer = () => {
     return (
         <div style={styles.footer}>© All rights reserved.</div>

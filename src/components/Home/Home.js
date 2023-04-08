@@ -55,5 +55,3 @@ const styles = {
 };
 
 export default Home;
-
-//rafce

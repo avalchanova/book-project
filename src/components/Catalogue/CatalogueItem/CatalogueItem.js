@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-
 const CatalogueItem = ({
     _id,
     title,
@@ -28,7 +27,6 @@ const CatalogueItem = ({
 };
 const styles = {
     card: {
-        // TODO: cards are a little wobbly in size and are not in the line and go a little zigzaggy
         width: "540px",
         height: "280px",
         borderColor: "#ffe45e",
