@@ -13,7 +13,8 @@ const Header = () => {
 
     // console.log(firstName);
     return (
-        <nav className={styles.navigation}>
+        // <nav className={styles.navigation}>
+        <nav >
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
                     <NavLink className="navbar-brand" to="/"><img id="logo" src="../logo_transparentBackground.png" alt="Logo" /></NavLink>
@@ -48,7 +49,7 @@ const Header = () => {
                             )}
                             {isAuthenticated && (
                                 <li>
-                                    <NavLink className="nav-link active" to="#">{name}</NavLink>
+                                    <NavLink className="nav-link active" to="#"> Hi, {name}</NavLink>
                                 </li>
                             )}
                             {isAuthenticated && (

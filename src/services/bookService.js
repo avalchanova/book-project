@@ -6,7 +6,7 @@ export const bookServiceFactory = (token) => {
     const request = requestFactory(token);
     const getAll = async () => {
         const result = await request.get(baseUrl);
-        const books = Object.values(result); //we are modifying the data here because the result comes as an {} with ID and the value of the ID is the whole content of the book = name, description, categories
+        const books = Object.values(result);
         return books;
     };
 
@@ -24,10 +24,6 @@ export const bookServiceFactory = (token) => {
 
     const deleteBook = (bookId) => request.delete(`${baseUrl}/${bookId}`);
 
-    // const addComment = async (bookId, data) => {
-    //     const result = await request.post(`${baseUrl}/${bookId}/comments`, data);
-    //     return result;
-    // };
 
     return {
         getAll,
@@ -35,6 +31,5 @@ export const bookServiceFactory = (token) => {
         create,
         edit,
         delete: deleteBook
-        // addComment,
     };
 };

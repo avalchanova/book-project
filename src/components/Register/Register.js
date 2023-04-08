@@ -31,7 +31,7 @@ const Register = () => {
                     <input
                         type="text"
                         className="form-control"
-                        id="firstName"
+                        id="validationCustom01"
                         name={RegisterFormKeys.FirstName}
                         value={values[[[RegisterFormKeys.FirstName]]]}
                         onChange={changeHandler}
@@ -62,7 +62,7 @@ const Register = () => {
                     <label htmlFor="validationCustomEmail" className="form-label">Email</label>
                     <div className="input-group has-validation">
                         <input
-                            type="text"
+                            type="email"
                             className="form-control"
                             id="email"
                             name={RegisterFormKeys.Email}

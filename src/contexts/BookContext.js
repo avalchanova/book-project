@@ -14,7 +14,7 @@ export const BookProvider = ({ children }) => {
             .then(result => {
                 setBooks(result);
             });
-    }, []);
+    }, [bookService]);
     //  TODO: error with destructuring
     const onCreateSubmit = async (data) => {
         try {

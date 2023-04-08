@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext.js';
 import { BookProvider } from './contexts/BookContext.js';
 
-// TODO: create an Edit Page
 import Home from './components/Home/Home.js';
 import Header from './components/Header/Header.js';
 import Footer from './components/Footer/Footer.js';

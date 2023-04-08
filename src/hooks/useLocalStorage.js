@@ -16,7 +16,7 @@ export const useLocalStorage = (key, initialValue) => {
         // sterialized means in a string form
         const persistedStateSerialized = localStorage.getItem(key);
 
-        // ако е локалСторидж нещо е персистирало: следва да се обработи и да се ретърнне
+        // ако в локалСторидж нещо е персистирало: следва да се обработи и да се ретърнне
         if (persistedStateSerialized) {
             const persistedState = JSON.parse(persistedStateSerialized);
             return persistedState;
@@ -41,5 +41,3 @@ export const useLocalStorage = (key, initialValue) => {
         setLocalStorageState
     ];
 };
-
-//DONE

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { BookContext, useBookContext } from "../../contexts/BookContext.js";
+import { useBookContext } from "../../contexts/BookContext.js";
 
 import { useForm } from "../../hooks/useForm.js";
 import { useService } from "../../hooks/useService.js";
@@ -40,7 +40,7 @@ const Edit = () => {
             .then(result => {
                 changeValues(result);
             });
-    }, [bookId]);
+    }, [bookId, bookService, changeValues]);
     return (
         <div className='card border-4 rounded-3 mb-3' style={styles.mainContainer}>
             <form className="row g-3" method="POST" onSubmit={onSubmit} style={styles.form}>
@@ -127,7 +127,7 @@ const Edit = () => {
                 <div className="col-12">
                     <label htmlFor="inputFavouriteQuote" className="form-label">Year of Publication</label>
                     <input
-                        type="text"
+                        type="number"
                         className="form-control"
                         id="inputFavouriteQuote"
                         value={values.year}
@@ -153,7 +153,7 @@ const Edit = () => {
                 <div className="col-md-6">
                     <label htmlFor="inputPages" className="form-label">Pages</label>
                     <input
-                        ype="text"
+                        type="number"
                         className="form-control"
                         id="inputPages"
                         value={values.pages}

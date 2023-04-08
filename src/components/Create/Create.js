@@ -73,7 +73,7 @@ export const Create = () => {
                 </div>
                 <div className="col-12">
                     <label htmlFor="inputFavouriteQuote" className="form-label">Year of Publication</label>
-                    <input type="text" className="form-control" id="inputFavouriteQuote" value={values.year} name={CreateFormKeys.Year} onChange={changeHandler} placeholder="1868" />
+                    <input type="number" className="form-control" id="inputFavouriteQuote" value={values.year} name={CreateFormKeys.Year} onChange={changeHandler} placeholder="1868" />
                 </div>
 
                 {/* <div className="col-12">
@@ -86,7 +86,7 @@ export const Create = () => {
                 </div>
                 <div className="col-md-6">
                     <label htmlFor="inputPages" className="form-label">Pages</label>
-                    <input type="text" className="form-control" id="inputPages" value={values.pages} name={CreateFormKeys.Pages} onChange={changeHandler} />
+                    <input type="number" className="form-control" id="inputPages" value={values.pages} name={CreateFormKeys.Pages} onChange={changeHandler} />
                 </div>
                 {/* TODO: how do you manage a radio button value? */}
                 {/* <div className="col-12" >

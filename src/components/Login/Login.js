@@ -1,7 +1,10 @@
 import { useAuthContext } from '../../contexts/AuthContext.js';
 import { useForm } from '../../hooks/useForm.js';
 import { Link } from 'react-router-dom';
-// import styles from './Login.module.css';
+import './Login.module.css';
+import { useOnError } from '../../hooks/useOnError.js';
+import { ErrorModal } from '../../modals/Error/ErrorModal.js';
+import { useState, useEffect } from 'react';
 
 
 const LoginFormKeys = {
@@ -10,20 +13,35 @@ const LoginFormKeys = {
 };
 
 export const Login = () => {
+    const [errorState, setErrorState] = useState();
+
+    const { error } = useOnError('loginError');
     const { onLoginSubmit } = useAuthContext(); // спестява ни ползването на useContext(AuthContext)
     // through the context we created we have access to the onLoginSubmit func which is intiially created in App.js
     const { values, changeHandler, onSubmit } = useForm({ // ?? how does the form work exactly
         [LoginFormKeys.Email]: "",
         [LoginFormKeys.Password]: "",
+        // formErrors: { email: '', password: '' },
+        // emailValid: false,
+        // passwordValid: false,
+        // formValid: false
     }, onLoginSubmit);
 
+    useEffect(() => {
+        if (error) {
+            console.log({ data: JSON.parse(error) });
+            setErrorState(JSON.parse(error));
+        }
+    }, [error]);
+
     return (
-        <div >
+        <div>
+            {errorState && <ErrorModal title={"Login Failed"} body={errorState.message} errorKey={"loginError"} />}
             <div className="card border-4 rounded-3 mb-3" id="mainContainer" style={styles.mainContainer}>
-                <form id="login" method="POST" onSubmit={onSubmit} style={styles.form} >
+                <form id="login" className="needs-validation" noValidate method="POST" onSubmit={onSubmit} style={styles.form} >
                     <h1 style={styles.heading}>LOGIN</h1>
 
-                    <div className="mb-3">
+                    <div className="inputField">
                         <label htmlFor="exampleInputEmail1" className="form-label form-outline w-25">Email address</label>
                         <input
                             type="email"
@@ -34,10 +52,11 @@ export const Login = () => {
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
                             placeholder='john@doe.com'
+                            required
                         />
                     </div>
 
-                    <div className="mb-3">
+                    <div className="inputField">
                         <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                         <input
                             type="password"
@@ -46,6 +65,7 @@ export const Login = () => {
                             value={values[[LoginFormKeys.Password]]}
                             className="form-control"
                             id="exampleInputPassword1"
+                            required
                         />
                     </div>
                     <div className="signup-link">

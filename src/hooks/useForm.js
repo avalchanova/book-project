@@ -10,11 +10,10 @@ export const useForm = (initialValues, onSubmitHandler) => {
     const onSubmit = (e) => {
         e.preventDefault();
         onSubmitHandler(values);
-        setValues(initialValues); //зануляваме формата след като сме изпратили датата <3 
+        setValues(initialValues);
     };
 
     const changeValues = (newValues) => {
-        // TODO: check if values are the same as the form values, if there isnt any new property and such
         setValues(newValues);
     };
 

@@ -30,7 +30,7 @@ const BookDetails = () => {
             };
             dispatch({ type: 'BOOK_FETCH', payload: bookState }); //?? understand what is happening with the Reducer, how does it work,etc?
         });
-    }, [bookId]);
+    }, [bookId, bookService]);
 
     const onCommentSubmit = async (values) => {
         const response = await commentService.create(bookId, values.comment);
