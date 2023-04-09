@@ -60,20 +60,18 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         paddingLeft: "100px",
-        // minWidth: '50%',
     },
     linkDivTwo: {
         display: 'flex',
         flexDirection: 'column',
         paddingLeft: "100px",
-        color: "red"
-        // minWidth: '50%',
+        color: "red",
     },
     linkOne: {
-        color: "#5597d8"
+        color: "#5597d8",
     },
     linkTwo: {
-        color: "#5597d8"
+        color: "#5597d8",
     }
 };
 

@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext.js";
 
 const Logout = () => {
-    const { onLogout } = useContext(AuthContext); // ?? what exactly?
+    const { onLogout } = useContext(AuthContext);
 
     useEffect(() => {
         onLogout();
