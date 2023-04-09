@@ -9,6 +9,5 @@ export const RouteGuard = ({
     if (!isAuthenticated) {
         return <Navigate to="/login" />;
     }
-
     return children ? children : <Outlet />;
 };
