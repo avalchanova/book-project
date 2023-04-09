@@ -14,13 +14,12 @@ export const BookProvider = ({ children }) => {
             .then(result => {
                 setBooks(result);
             });
-    }, [bookService]);
-    //  TODO: error with destructuring
+    }, []);
+    //  the error was here; in the dependancy array [bookService]
     const onCreateSubmit = async (data) => {
         try {
             const newBook = await bookService.create(data);
             setBooks(state => [...state, newBook]);
-            console.log(newBook);
             navigate('/catalogue');
         } catch (error) {
             console.log(error.message);
@@ -28,8 +27,8 @@ export const BookProvider = ({ children }) => {
     };
 
     const onBookEditSubmit = async (values) => {
-        const result = await bookService.edit(values._id, values); // the book is edited on the server
-        setBooks(state => state.map(x => x._id === values._id ? result : x)); // the book is edited on the client
+        const result = await bookService.edit(values._id, values);
+        setBooks(state => state.map(x => x._id === values._id ? result : x));
         navigate(`/catalogue/${values._id}`);
     };
 
@@ -60,5 +59,3 @@ export const useBookContext = () => {
     const context = useContext(BookContext);
     return context;
 };
-
-//DONE

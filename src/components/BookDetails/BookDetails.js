@@ -27,9 +27,9 @@ const BookDetails = () => {
                 ...bookData,
                 comments,
             };
-            dispatch({ type: 'BOOK_FETCH', payload: bookState }); //?? understand what is happening with the Reducer, how does it work,etc?
+            dispatch({ type: 'BOOK_FETCH', payload: bookState });
         });
-    }, [bookId, bookService]);
+    }, [bookId]);
 
     const onCommentSubmit = async (values) => {
         const response = await commentService.create(bookId, values.comment);
@@ -37,12 +37,11 @@ const BookDetails = () => {
             type: 'COMMENT_ADD',
             payload: response,
             name,
-        }); //this whole object is in the action
-        // we are adding the new comment to the state so there wont be necessary to refresh the page
+        });
+        // adding the new comment to the state so there wont be necessary to refresh the page
         // for the new comment to appear
     };
-    const isOwner = book._ownerId === userId; // if book._ownerId is equal to the logged in user, the isOwner will be true
-    console.log(isOwner);
+    const isOwner = book._ownerId === userId;
 
     const onDeleteClick = async () => {
         // eslint-disable-next-line no-restricted-globals

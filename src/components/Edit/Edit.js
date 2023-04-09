@@ -40,7 +40,7 @@ const Edit = () => {
             .then(result => {
                 changeValues(result);
             });
-    }, [bookId, bookService, changeValues]);
+    }, [bookId]);
     return (
         <div className='card border-4 rounded-3 mb-3' style={styles.mainContainer}>
             <form className="row g-3" method="POST" onSubmit={onSubmit} style={styles.form}>
