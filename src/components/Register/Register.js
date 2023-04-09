@@ -107,17 +107,6 @@ const Register = () => {
                         Please repeat the password correctly.
                     </div>
                 </div>
-                {/* <div className="col-12">
-                    <div className="form-check">
-                        <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required />
-                        <label className="form-check-label" htmlFor="invalidCheck">
-                            Agree to terms and conditions
-                        </label>
-                        <div className="invalid-feedback">
-                            You must agree before submitting.
-                        </div>
-                    </div>
-                </div> */}
                 <div className="signup-link">
                     Already a member? <Link to="/login">Log in now</Link>
                 </div>
@@ -137,15 +126,10 @@ const styles = {
         maxWidth: "600px",
         borderColor: "#ffe45e",
         boxShadow: "1px 2px 15px 10px rgba(20, 20, 20, 0.1)"
-        // alignItems: "center",
     },
     form: {
-        // paddingTop: "5%",
         paddingLeft: "10%",
         paddingRight: "10%",
-
-        // paddingBottom: "5%",
-
     },
     heading: {
         paddingTop: "5%",
