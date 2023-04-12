@@ -14,5 +14,4 @@ export const getAll = async (bookId) => {
 export const create = async (bookId, comment) => {
     const result = await request.post(baseUrl, { bookId, comment });
     return result;
-}
-
+};
