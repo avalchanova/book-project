@@ -17,6 +17,37 @@ export const BookProvider = ({ children }) => {
     }, []);
 
     const onCreateSubmit = async (data) => {
+        const { ...bookData } = data;
+        if (bookData.title.length === 0) {
+            alert(`Please enter a title.`);
+            return;
+        }
+        if (bookData.author.length === 0) {
+            alert(`Please enter an author.`);
+            return;
+        }
+        if (bookData.imageUrl.length === 0) {
+            alert(`Please enter an image URL.`);
+            return;
+        }
+        if (bookData.summary.length === 0) {
+            alert(`Please enter a brief summary of the book.`);
+            return;
+        }
+        if (bookData.genre === "") {
+            alert(`Please choose an existing genre or select "other".`);
+            return;
+        }
+        if (bookData.favouriteQuote.length === 0) {
+            alert(`Please enter a your favourite quote.`);
+            return;
+        }
+        if (bookData.year === '') {
+            alert(`Please enter year of publication.`);
+            return;
+        }
+        // tropes are not mandatory
+        // book pages are not mandatory
         try {
             const newBook = await bookService.create(data);
             setBooks(state => [...state, newBook]);
@@ -27,7 +58,32 @@ export const BookProvider = ({ children }) => {
     };
 
     const onBookEditSubmit = async (values) => {
-        const { ...data } = values;
+        // TODO: when a field is missed and the alert goes on, all fields are emptied, which is not good UX
+        const { ...bookData } = values;
+        if (bookData.title.length === 0) {
+            alert(`Please enter a title.`);
+            return;
+        }
+        if (bookData.author.length === 0) {
+            alert(`Please enter an author.`);
+            return;
+        }
+        if (bookData.imageUrl.length === 0) {
+            alert(`Please enter an image URL.`);
+            return;
+        }
+        if (bookData.genre === "choose") {
+            alert(`Please choose an existing genre or select "other".`);
+            return;
+        }
+        if (bookData.quote.length === 0) {
+            alert(`Please enter a your favourite quote.`);
+            return;
+        }
+        if (bookData.year === '') {
+            alert(`Please enter year of publication.`);
+            return;
+        }
         const result = await bookService.edit(values._id, values);
         setBooks(state => state.map(x => x._id === values._id ? result : x));
         navigate(`/catalogue/${values._id}`);
