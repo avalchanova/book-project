@@ -15,7 +15,7 @@ export const BookProvider = ({ children }) => {
                 setBooks(result);
             });
     }, []);
-    //  the error was here; in the dependancy array [bookService]
+
     const onCreateSubmit = async (data) => {
         try {
             const newBook = await bookService.create(data);
@@ -27,6 +27,7 @@ export const BookProvider = ({ children }) => {
     };
 
     const onBookEditSubmit = async (values) => {
+        const { ...data } = values;
         const result = await bookService.edit(values._id, values);
         setBooks(state => state.map(x => x._id === values._id ? result : x));
         navigate(`/catalogue/${values._id}`);
