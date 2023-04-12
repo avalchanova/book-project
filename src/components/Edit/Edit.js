@@ -47,7 +47,7 @@ const Edit = () => {
                 <h1 style={styles.heading}>Edit Book</h1>
 
                 <div className="col-md-6 p3">
-                    <label htmlFor="inputTitlel4" className="form-label">Title</label>
+                    <label htmlFor="inputTitlel4" className="form-label">Title*</label>
                     <input type="text"
                         className="form-control"
                         id="inputTitle4"
@@ -57,7 +57,7 @@ const Edit = () => {
                         placeholder="Little Women" />
                 </div>
                 <div className="col-md-6">
-                    <label htmlFor="inputAuthor4" className="form-label">Author</label>
+                    <label htmlFor="inputAuthor4" className="form-label">Author*</label>
                     <input
                         type="text"
                         className="form-control"
@@ -68,7 +68,7 @@ const Edit = () => {
                         placeholder="Louisa May Alcott" />
                 </div>
                 <div className="col-12">
-                    <label htmlFor="inputImageUrl" className="form-label">Image URL</label>
+                    <label htmlFor="inputImageUrl" className="form-label">Image URL*</label>
                     <input
                         type="text"
                         className="form-control"
@@ -79,7 +79,7 @@ const Edit = () => {
                         placeholder="https://" />
                 </div>
                 <div className="col-12">
-                    <label htmlFor="inputSummary" className="form-label">Summary</label>
+                    <label htmlFor="inputSummary" className="form-label">Summary*</label>
                     <input
                         type="text"
                         className="form-control"
@@ -89,7 +89,7 @@ const Edit = () => {
                         onChange={changeHandler} />
                 </div>
                 <div className="col-12">
-                    <label htmlFor="inputState" className="form-label">Genre</label>
+                    <label htmlFor="inputState" className="form-label">Genre*</label>
                     <select
                         id="inputState"
                         className="form-select"
@@ -114,7 +114,7 @@ const Edit = () => {
                     </select>
                 </div>
                 <div className="col-12">
-                    <label htmlFor="inputFavouriteQuote" className="form-label">Favourite Quote</label>
+                    <label htmlFor="inputFavouriteQuote" className="form-label">Favourite Quote*</label>
                     <input
                         type="text"
                         className="form-control"
@@ -125,7 +125,7 @@ const Edit = () => {
                         placeholder="Conceit spoils the finest genius." />
                 </div>
                 <div className="col-12">
-                    <label htmlFor="inputFavouriteQuote" className="form-label">Year of Publication</label>
+                    <label htmlFor="inputFavouriteQuote" className="form-label">Year of Publication*</label>
                     <input
                         type="number"
                         className="form-control"
@@ -155,6 +155,7 @@ const Edit = () => {
                         name={EditFormKeys.Pages}
                         onChange={changeHandler} />
                 </div>
+                <div style={styles.miniFooter}>* Marked fields are required</div>
                 <div className="col-12" style={styles.buttonContainer}>
                     <button type="submit" className="btn" value="edit book" style={styles.button}>Edit Book</button>
                 </div>
@@ -195,6 +196,9 @@ const styles = {
         paddingBottom: "25px",
         justifyContent: 'center',
         display: 'flex',
+    },
+    miniFooter: {
+        color: "#949494"
     }
 };
 
