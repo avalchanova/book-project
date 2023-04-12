@@ -1,5 +1,5 @@
 export const bookValidations = (data) => {
-
+    // TODO: does not return which is why it is not used in the project
     const { ...bookData } = data;
     if (bookData.title.length === 0) {
         alert(`Please enter a title.`);
