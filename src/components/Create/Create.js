@@ -32,23 +32,23 @@ export const Create = () => {
                 <h1 style={styles.heading}>CREATE A POST</h1>
 
                 <div className="col-md-6 p3">
-                    <label htmlFor="inputTitlel4" className="form-label">Title</label>
+                    <label htmlFor="inputTitlel4" className="form-label">Title*</label>
                     <input type="text" className="form-control" id="inputTitle4" value={values.title} name={CreateFormKeys.Title} onChange={changeHandler} placeholder="Little Women" />
                 </div>
                 <div className="col-md-6">
-                    <label htmlFor="inputAuthor4" className="form-label">Author</label>
+                    <label htmlFor="inputAuthor4" className="form-label">Author*</label>
                     <input type="text" className="form-control" id="inputAuthor4" value={values.author} name={CreateFormKeys.Author} onChange={changeHandler} placeholder="Louisa May Alcott" />
                 </div>
                 <div className="col-12">
-                    <label htmlFor="inputImageUrl" className="form-label">Image URL</label>
+                    <label htmlFor="inputImageUrl" className="form-label">Image URL*</label>
                     <input type="text" className="form-control" id="inputImageUrl" value={values.imageUrl} name={CreateFormKeys.ImageUrl} onChange={changeHandler} placeholder="https://" />
                 </div>
                 <div className="col-12">
-                    <label htmlFor="inputSummary" className="form-label">Summary</label>
+                    <label htmlFor="inputSummary" className="form-label">Summary*</label>
                     <input type="text" className="form-control" id="inputSummary" value={values.summary} name={CreateFormKeys.Summary} onChange={changeHandler} />
                 </div>
                 <div className="col-12">
-                    <label htmlFor="inputState" className="form-label">Genre</label>
+                    <label htmlFor="inputState" className="form-label">Genre*</label>
                     <select id="inputState" className="form-select" value={values.genre} name={CreateFormKeys.Genre} onChange={changeHandler}>
                         <option value="choose">Choose...</option>
                         <option value="Adventure">Adventure</option>
@@ -68,11 +68,11 @@ export const Create = () => {
                     </select>
                 </div>
                 <div className="col-12">
-                    <label htmlFor="inputFavouriteQuote" className="form-label">Favourite Quote</label>
+                    <label htmlFor="inputFavouriteQuote" className="form-label">Favourite Quote*</label>
                     <input type="text" className="form-control" id="inputFavouriteQuote" value={values.favouriteQuote} name={CreateFormKeys.FavouriteQuote} onChange={changeHandler} placeholder="Conceit spoils the finest genius." />
                 </div>
                 <div className="col-12">
-                    <label htmlFor="inputFavouriteQuote" className="form-label">Year of Publication</label>
+                    <label htmlFor="inputFavouriteQuote" className="form-label">Year of Publication*</label>
                     <input type="number" className="form-control" id="inputFavouriteQuote" value={values.year} name={CreateFormKeys.Year} onChange={changeHandler} placeholder="1868" />
                 </div>
                 <div className="col-md-6">
@@ -83,6 +83,7 @@ export const Create = () => {
                     <label htmlFor="inputPages" className="form-label">Pages</label>
                     <input type="number" className="form-control" id="inputPages" value={values.pages} name={CreateFormKeys.Pages} onChange={changeHandler} />
                 </div>
+                <div style={styles.miniFooter}>* Marked fields are required</div>
                 <div className="col-12" style={styles.buttonContainer}>
                     <button type="submit" className="btn" value="Create Post" style={styles.button}>Create Post</button>
                 </div>
@@ -122,6 +123,9 @@ const styles = {
         paddingBottom: "25px",
         justifyContent: 'center',
         display: 'flex',
+    },
+    miniFooter: {
+        color: "#949494"
     }
 };
 
