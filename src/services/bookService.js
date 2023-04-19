@@ -1,6 +1,6 @@
 import { requestFactory } from './requester.js';
 
-console.log(process.env.NODE_ENV); // comes from nodejs
+// console.log(process.env.NODE_ENV); // comes from nodejs
 // there are development environment and production environment
 
 const host = process.env.NODE_ENV === 'development'
